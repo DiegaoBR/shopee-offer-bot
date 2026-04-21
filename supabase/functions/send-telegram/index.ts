@@ -17,12 +17,17 @@ const BodySchema = z.object({
   chatId: z.string().min(1),
 });
 
+// Escape special chars for MarkdownV2
+function esc(text: string): string {
+  return text.replace(/([_*\[\]()~`>#+\-=|{}.!\\])/g, '\\$1');
+}
+
 function formatMessage(offer: z.infer<typeof BodySchema>['offer']): string {
   const discount = Math.round(((offer.original_price - offer.promo_price) / offer.original_price) * 100);
-  let msg = `🔥 *${offer.title}*\n\n`;
-  msg += `💰 ~R$ ${offer.original_price.toFixed(2)}~ → *R$ ${offer.promo_price.toFixed(2)}*\n`;
-  msg += `📉 Desconto: *${discount}%*\n`;
-  if (offer.category) msg += `📦 Categoria: ${offer.category}\n`;
+  let msg = `🔥 *${esc(offer.title)}*\n\n`;
+  msg += `💰 ~R\\$ ${esc(offer.original_price.toFixed(2))}~ ➜ *R\\$ ${esc(offer.promo_price.toFixed(2))}*\n`;
+  msg += `📉 Desconto: *${esc(String(discount))}%*\n`;
+  if (offer.category) msg += `📦 Categoria: ${esc(offer.category)}\n`;
   msg += `\n🛒 [COMPRAR AGORA](${offer.affiliate_link})`;
   return msg;
 }
