@@ -65,7 +65,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         chat_id: chatId,
         text,
-        parse_mode: 'Markdown',
+        parse_mode: 'MarkdownV2',
         disable_web_page_preview: false,
       }),
     });
