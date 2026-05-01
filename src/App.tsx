@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Pizza, Zap, Clock, Star, MessageCircle, ShoppingBag, ChevronRight } from 'lucide-react';
+import { Zap, Clock, Star, ShoppingBag } from 'lucide-react';
 
 const App = () => {
   const alias = "diego-francisco-abreu-botelho";
