@@ -67,8 +67,8 @@ export default function LandingPage() {
             Ofertas atualizadas diariamente
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
-            As <span className="text-primary">Melhores Ofertas</span>
-            <br />da Shopee em um só lugar
+            As <span className="text-primary">melhores ofertas</span>
+            <br />da Shoope reunidas Aqui!
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Curadoria das melhores promoções e preços baixos. Atualizamos todos os dias para você economizar.
