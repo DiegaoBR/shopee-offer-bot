@@ -1,101 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-
-    --primary: 16 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 16 80% 95%;
-    --secondary-foreground: 16 100% 30%;
-
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 16 80% 95%;
-    --accent-foreground: 16 100% 30%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 16 100% 50%;
-
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 16 100% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 16 80% 95%;
-    --sidebar-accent-foreground: 16 100% 30%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 16 100% 50%;
-
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
+  body {
+    @apply bg-[#050505] text-[#e5e5e5] antialiased;
+    font-family: 'Outfit', sans-serif;
   }
-
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 16 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 16 50% 15%;
-    --secondary-foreground: 16 80% 80%;
-
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 16 50% 15%;
-    --accent-foreground: 16 80% 80%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 16 100% 50%;
-
-    --sidebar-background: 0 0% 7%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 16 100% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 16 50% 15%;
-    --sidebar-accent-foreground: 16 80% 80%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 16 100% 50%;
-
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 100%;
+  
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', serif;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+@theme {
+  --color-primary: #d4af37; /* Gold/Brass accent */
+  --color-secondary: #ffffff;
+  --color-accent: #8b0000; /* Deep ritual red */
+}
 
-  body {
-    @apply bg-background text-foreground;
-  }
+.glass {
+  @apply bg-white/[0.02] backdrop-blur-xl border border-white/5;
+}
+
+.text-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-[#f9d976] to-[#b08d26];
+}
+
+.section-divider {
+  @apply w-px h-24 bg-gradient-to-b from-primary/50 to-transparent mx-auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-primary/50 transition-colors;
 }
