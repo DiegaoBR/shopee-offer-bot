@@ -28,7 +28,7 @@ export const CheckoutPage = () => {
   const handleProceedToPayment = (e: React.FormEvent) => {
     e.preventDefault();
     // Redirect to Yampi with the specific product token
-    window.location.href = `https://${alias}.catalog.yampi.io/cart/add/${product.token}`;
+    window.location.href = `https://${alias}.pay.yampi.com.br/r/${product.token}`;
   };
 
   return (
